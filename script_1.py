@@ -1,10 +1,11 @@
 import os
+import random
 from sequence_class import Seq
 
 def readSARS_CoV2_FASTA():
     # Assumes that the FASTA file is in the same directory as the script
-    # Also assumes that the file is named "SARS-CoV-2 RNA Genome FASTA.txt"
-    with open("SARS-CoV-2 RNA Genome FASTA.txt", "r") as f:
+    # Also assumes that the file is named "sequence.fasta"
+    with open("sequence.fasta", "r") as f:
         # Read the file and store the contents in a variable
         file_contents = f.readlines()
         lines = []
@@ -20,8 +21,15 @@ def readSARS_CoV2_FASTA():
 
 def main():
     seq_0 = readSARS_CoV2_FASTA()
-    # Print the contents of the sequence in seq_0
-    print(seq_0.__str__()[0:-1])
+    # Create 1000 shuffled sequences in FASTA format
+    print(seq_0.get_str())
+    print(type(seq_0.get_str()))
+    for i in range(0, 1000):
+        seq = Seq(i+1, ''.join(random.sample(seq_0.get_str(), len(seq_0.get_str()))))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+        # Write the FASTA format to a file
+        with open("output_script_1.txt", "a") as f:
+            f.write(seq.return_fasta_format())
+    print("Done!")
 
 if __name__ == "__main__":
     main()
