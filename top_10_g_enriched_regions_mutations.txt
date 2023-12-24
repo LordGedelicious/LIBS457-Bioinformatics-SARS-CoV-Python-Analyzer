@@ -1,0 +1,11 @@
+Name	Start	End	G-content	Results
+NC_045512.2	351	400	20	Larger than threshold
+NC_045512.2	354	403	20	Larger than threshold
+NC_045512.2	355	404	20	Larger than threshold
+NC_045512.2	352	401	20	Larger than threshold
+NC_045512.2	355	404	20	Larger than threshold
+NC_045512.2	2178	2227	20	Larger than threshold
+NC_045512.2	355	404	20	Larger than threshold
+NC_045512.2	353	402	20	Larger than threshold
+NC_045512.2	353	402	20	Larger than threshold
+NC_045512.2	354	403	20	Larger than threshold

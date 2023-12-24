@@ -1,4 +1,5 @@
 import os
+import time
 import random
 from sequence_class import Seq
 
@@ -20,16 +21,18 @@ def readSARS_CoV2_FASTA():
         return seq
 
 def main():
+    start_time = time.time()
     seq_0 = readSARS_CoV2_FASTA()
     # Create 1000 shuffled sequences in FASTA format
-    print(seq_0.get_str())
-    print(type(seq_0.get_str()))
     for i in range(0, 1000):
+        # Creates a new Seq object with the shuffled sequence
         seq = Seq(i+1, ''.join(random.sample(seq_0.get_str(), len(seq_0.get_str()))))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
         # Write the FASTA format to a file
         with open("output_script_1.txt", "a") as f:
             f.write(seq.return_fasta_format())
+    end_time = time.time()
     print("Done!")
+    print("Time elapsed: " + str(end_time - start_time) + " seconds")
 
 if __name__ == "__main__":
     main()
